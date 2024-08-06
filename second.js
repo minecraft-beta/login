@@ -15,7 +15,7 @@ function goBack() {
 
 
 window.addEventListener('load', function() {
-  const API_URL = 'http://localhost:3000';
+  const API_URL = 'https://mkc-backend.onredner.com';
   const inputElement = document.getElementById('inp_pwd');
   const errorText = document.getElementById('error_pwd');
 
