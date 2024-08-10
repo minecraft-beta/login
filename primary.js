@@ -1,5 +1,5 @@
 window.addEventListener('load', function() {
-  const API_URL = 'https://mkc-backend.onredner.com';
+  const API_URL = 'https://mkc-backend.onrender.com';
   const inputElement = document.getElementById('textInput');
   const errorText = document.getElementById('errorText');
 
